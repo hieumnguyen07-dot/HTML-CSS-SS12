@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng giao diện Header</title>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #6c63ff;
+    font-weight: bold;
+    font-size: 24px;
+}
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+.nav-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+.nav-list a:hover {
+    color: #007bff;
+}
+.btn-start {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+@media (max-width: 992px) {
+    .nav-list {
+        gap: 15px;
+    }
+    .nav-list a {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+        margin-left: 15px;
+    }
+    .container {
+        justify-content: space-between;
+    }
+    .btn-start {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+</style>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-book-open"></i>
+            <span>EduLearn</span>
+        </div>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Tính năng</a></li>
+                <li><a href="#">Khóa học</a></li>
+                <li><a href="#">Đánh giá</a></li>
+                <li><a href="#">Bảng giá</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <button class="btn-start">Bắt đầu ngay</button>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+</html>

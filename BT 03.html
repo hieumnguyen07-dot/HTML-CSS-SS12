@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng giao diện Card bảng giá</title>
+</head>
+<style>
+:root {
+    --primary-color: #5d5fef;
+    --button-bg: #007bff;
+    --text-main: #333;
+    --text-light: #777;
+    --bg-light: #f9f9fb;
+}
+* {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+body { background-color: var(--bg-light); padding: 60px 20px; }
+.pricing-header { text-align: center; margin-bottom: 50px; }
+.badge {
+    background: #e8e9ff; color: var(--primary-color);
+    padding: 4px 12px; border-radius: 4px; font-size: 12px;
+}
+.pricing-header h1 { font-size: 32px; margin: 15px 0; color: var(--text-main); }
+.pricing-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+.pricing-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+.pricing-card.featured {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+}
+.pricing-card h3 { margin-bottom: 20px; font-size: 20px; }
+.price {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30px;
+}
+.price span { font-size: 14px; color: var(--text-light); }
+.features { list-style: none; text-align: left; margin-bottom: 30px; }
+.features li {
+    margin-bottom: 15px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: var(--text-main);
+}
+.features li::before {
+    margin-right: 10px;
+    font-weight: bold;
+}
+.features li.check::before { content: "✔"; color: #28a745; }
+.features li.uncheck::before { content: "✖"; color: #ccc; }
+.features li.uncheck { color: #aaa; }
+button {
+    width: 100%; padding: 12px;
+    border-radius: 6px; cursor: pointer;
+    font-weight: 600; font-size: 14px; transition: 0.3s;
+}
+.btn-outline {
+    background: transparent; border: 1px solid var(--button-bg);
+    color: var(--button-bg);
+}
+.btn-solid {
+    background: var(--button-bg); border: none;
+    color: white;
+}
+@media (max-width: 992px) {
+    .pricing-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pricing-card.featured { transform: none; }
+}
+@media (max-width: 600px) {
+    .pricing-container {
+        grid-template-columns: 1fr;
+    }
+    .pricing-header h1 { font-size: 24px; }
+}
+</style>
+<body>
+<section class="pricing-section">
+    <div class="pricing-header">
+        <span class="badge">Bảng giá</span>
+        <h1>Chọn gói phù hợp với bạn</h1>
+        <p>Linh hoạt và phù hợp với mọi nhu cầu học tập</p>
+    </div>
+
+    <div class="pricing-container">
+        <div class="pricing-card">
+            <h3>Cơ bản</h3>
+            <div class="price">499.000đ<span>/tháng</span></div>
+            <ul class="features">
+                <li class="check">Truy cập 50+ khóa học</li>
+                <li class="check">Học trên mọi thiết bị</li>
+                <li class="check">Hỗ trợ cộng đồng</li>
+                <li class="uncheck">Chứng chỉ</li>
+                <li class="uncheck">Hỗ trợ 1-1</li>
+            </ul>
+            <button class="btn-outline">Chọn gói</button>
+        </div>
+
+        <div class="pricing-card featured">
+            <h3>Chuyên nghiệp</h3>
+            <div class="price">999.000đ<span>/tháng</span></div>
+            <ul class="features">
+                <li class="check">Truy cập tất cả khóa học</li>
+                <li class="check">Học trên mọi thiết bị</li>
+                <li class="check">Hỗ trợ cộng đồng</li>
+                <li class="check">Chứng chỉ sau mỗi khóa học</li>
+                <li class="check">Hỗ trợ 1-1 với mentor</li>
+            </ul>
+            <button class="btn-solid">Chọn gói</button>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Doanh nghiệp</h3>
+            <div class="price">Liên hệ</div>
+            <ul class="features">
+                <li class="check">Tất cả tính năng Pro</li>
+                <li class="check">Quản lý nhóm học viên</li>
+                <li class="check">Báo cáo tiến độ chi tiết</li>
+                <li class="check">Khóa học tùy chỉnh</li>
+                <li class="check">Hỗ trợ chuyên dụng</li>
+            </ul>
+            <button class="btn-outline">Liên hệ</button>
+        </div>
+    </div>
+</section>
+</body>
+</html>
